@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gastos Familiares – Bruno & Nina</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>💸 Gastos Familiares</h1>
+
+  <input
+    id="entrada"
+    type="text"
+    placeholder="Ex: Mercado 420 / Nina"
+  />
+  <button onclick="adicionar()">Adicionar</button>
+
+  <div class="resumo">
+    <p><strong>Total Receitas:</strong> R$ <span id="totalReceitas">0.00</span></p>
+    <p><strong>Total Despesas:</strong> R$ <span id="totalDespesas">0.00</span></p>
+    <p><strong>Saldo:</strong> R$ <span id="saldo">0.00</span></p>
+  </div>
+
+  <canvas id="grafico" width="320" height="200"></canvas>
+
+  <ul id="lista"></ul>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+</body>
+</html>
